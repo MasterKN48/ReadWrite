@@ -9,7 +9,7 @@ const path =require('path');
 const cookieParser=require("cookie-parser");
 const fs=require('fs');
 // db
-mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true },{ useUnifiedTopology: true })
 .then(()=> console.log('DB Connected'))
 mongoose.connection.on('error',err => {
     console.log(`DB connection error: ${err.message}`)
