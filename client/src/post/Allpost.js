@@ -64,7 +64,7 @@ class Allpost extends Component {
                                     style={{ height: "200px", width: "100%",backgroundColor:'#0E2F56' }}
                                 />
                                 <h5 className="card-title">{post.title}</h5>
-                                <p className="card-text" dangerouslySetInnerHTML={{ __html: post.body.substring(0, 200)+'...'}}>
+                                <p className="card-text" dangerouslySetInnerHTML={{ __html: post.body ? post.body.substring(0, 200)+'...' :''}}>
                                 </p>
                                 
                                 <br />
