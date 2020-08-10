@@ -1,75 +1,36 @@
-Website URL:  https://readwrite0.herokuapp.com/
+## ReadWrite.io : A Blogging website for articles , news, tech blog, how to guide, ..etc.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://readwrite0.herokuapp.com) 
+
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://readwrite0.herokuapp.com) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/MasterKN48/blogs/master/LICENSE)  [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]()  [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/MasterKN48/ReadWrite)
+
+It is a MERN stack based blogging website where users can read, write, comment, profile management , follow other user, like blogs, get daily updates and user, admin dashboard. 
+
+### How to run locally?
+
+```bash
+# clone the project
+1. git clone https://github.com/MasterKN48/ReadWrite
+2. cd ReadWrite
+3. npm i
+4. cd client && npm i
+# in project dir create .env
+# .env must have these
+MONGO_URI=<mongodb-server-link>
+PORT=8000
+NODE_ENV=dev
+JWT_SECRET=<your-jwt-secret>
+CLIENT_URL=<client-url>
+PASS=<secret-for-password>
+OAUTH_CLIENT=<google-oauth-client-id>
+# in client side
+# change google oauth client id
+# edit client/src/user/SocialLogin.js
+# find and replace <your-google-oauth-client-id> with original id
+# `Run App`
+npm run dev
+```
 
 
-Beta v1.8 -- still have some task to do like error handling
-### Edit .env
-Incomplete Project, under construction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[![ForTheBadge built-with-swag](http://ForTheBadge.com/images/badges/built-with-swag.svg)](https://hithub.com/MasterKN48/)  [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)  [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)  [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
