@@ -10,17 +10,18 @@ dotenv.config();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const fs = require("fs");
-// db
+//db connect
 mongoose
-  .connect(
-    process.env.MONGO_URI,
-    { useNewUrlParser: true },
-    { useUnifiedTopology: true }
-  )
-  .then(() => console.log("DB Connected"));
-mongoose.connection.on("error", (err) => {
-  console.log(`DB connection error: ${err.message}`);
-});
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log("💻 Mondodb Connected");
+  })
+  .catch((err) => console.error(err));
 
 app.get("/docs", (req, res) => {
   fs.readFile("docs/apiDocs.json", (err, data) => {
@@ -67,6 +68,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => `Server running on port ${port} 🔥`);

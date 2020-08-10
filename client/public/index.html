@@ -4,34 +4,61 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0E2F56" />
+    <meta
+      name="description"
+      content="ReadWrite.io -- a blogging web application"
+    />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <link
-      rel="stylesheet"
+      rel="preload stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       href="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/css/bootstrap.min.css"
     />
     <link
-      rel="stylesheet"
+      rel="preload stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       href="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/css/mdb.min.css"
     />
     <link
-      rel="stylesheet"
+      rel="preload stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
-    <title>ReadWrite</title>
+    <link
+      rel="preload stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+    />
+    <title>ReadWrite | Blogging Website</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/mdb.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/jquery-3.4.1.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/popper.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/bootstrap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/masterkn48/cdn/mbd_pro_4.8.2/js/mdb.min.js"
+    ></script>
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-150536579-3"
@@ -42,15 +69,19 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-150536579-3");
     </script>
 
     <script>
-      console.log(
-        "%c MasterKN!",
-        "font-weight: bold; font-size: 40px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
-      );
+      if (window.location.hostname !== "localhost") {
+        console.log(
+          "%c MasterKN!",
+          "font-weight: bold; font-size: 40px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+        );
+        console.log = () => {};
+        console.warn = () => {};
+        console.error = () => {};
+      }
     </script>
   </body>
 </html>

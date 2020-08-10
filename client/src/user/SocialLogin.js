@@ -4,53 +4,53 @@ import GoogleLogin from "react-google-login";
 import { socialLogin, authenticate } from "../auth";
 
 class SocialLogin extends Component {
-    constructor() {
-        super();
-        this.state = {
-            redirectToReferrer: false
-        };
-    }
-
-    responseGoogle = response => {
-        //console.log(response);
-        const { googleId, name, email, imageUrl } = response.profileObj;
-        const user = {
-            password: googleId,
-            name: name,
-            email: email,
-            photo: imageUrl
-        };
-        // console.log("user obj to social login: ", user);
-        socialLogin(user).then(data => {
-            console.log("signin data: ", data);
-            if (data.error) {
-                console.log("Error Login. Please try again..");
-            } else {
-                console.log("signin success - setting jwt: ", data);
-                authenticate(data, () => {
-                    this.setState({ redirectToReferrer: true });
-                });
-            }
-        });
+  constructor() {
+    super();
+    this.state = {
+      redirectToReferrer: false,
     };
+  }
 
-    render() {
-        // redirect
-        const { redirectToReferrer } = this.state;
-        if (redirectToReferrer) {
-            return <Redirect to="/" />;
-        }
+  responseGoogle = (response) => {
+    const { googleId, name, email, imageUrl } = response.profileObj;
+    const user = {
+      password: googleId,
+      name: name,
+      email: email,
+      photo: imageUrl,
+    };
+    // console.log("user obj to social login: ", user);
+    socialLogin(user).then((data) => {
+      console.log("signin data: ", data);
+      if (data.error) {
+        console.log("Error Login. Please try again.");
+        alert("Error Login. Please try again.");
+      } else {
+        console.log("signin success - setting jwt: ", data);
+        authenticate(data, () => {
+          this.setState({ redirectToReferrer: true });
+        });
+      }
+    });
+  };
 
-        return (
-            <GoogleLogin
-                clientId="679977054902-8oqj330iselscnql25oddlipp63kg5fk.apps.googleusercontent.com"
-                buttonText="Login with Google"
-                onSuccess={this.responseGoogle}
-                onFailure={this.responseGoogle}
-            />
-        );
+  render() {
+    // redirect
+    const { redirectToReferrer } = this.state;
+    if (redirectToReferrer) {
+      return <Redirect to="/" />;
     }
-}
 
+    return (
+      <GoogleLogin
+        clientId="662547185429-fjjhfms2qncoi811q2qr5r3rfsnidk3h.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        theme="dark"
+        onSuccess={this.responseGoogle}
+        onFailure={this.responseGoogle}
+      />
+    );
+  }
+}
 
 export default SocialLogin;

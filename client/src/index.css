@@ -1,43 +1,26 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.line {
+  box-shadow: inset 0 0px 0 white, inset 0 -1px 0 white;
 }
-.line{
-  box-shadow: inset 0 0px 0 white, inset 0 -1px 0 white
-}
-#main{
-  display: table;
+#error {
   width: 100%;
   height: 90vh;
   text-align: center;
-  background-color: rgba(14, 47, 86,0.5)
+}
+#main {
+  width: 100%;
+  min-height: 90vh;
 }
 
-.fof{
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.fof h1{
-  font-size: 50px;
-  display: inline-block;
-  padding-right: 12px;
-  animation: type .5s alternate infinite;
-}
-
-@keyframes type{
-  from{box-shadow: inset -3px 0px 0px #888;}
-  to{box-shadow: inset -3px 0px 0px transparent;}
-}
 .jumbotron {
   width: 30wh;
   height: 20vh;
@@ -48,39 +31,45 @@ code {
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
 }
+
+.ck-rounded-corners .ck.ck-editor__editable:not(.ck-editor__nested-editable),
+.ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-rounded-corners {
+  min-height: 200px;
+}
+
 @-webkit-keyframes Gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
 @-moz-keyframes Gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
 @keyframes Gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 @media (max-width: 740px) {
@@ -90,8 +79,8 @@ code {
   .jarallax {
     height: 100vh;
   }
-  .line{
-    text-decoration:none;
+  .line {
+    text-decoration: none;
     box-shadow: none;
   }
 }

@@ -3,8 +3,8 @@ import { singlePost, update } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import { Redirect } from "react-router-dom";
 import Logo from "../core/Logo.png";
-import CKEditor from '@ckeditor/ckeditor5-react';
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import CKEditor from "@ckeditor/ckeditor5-react";
+import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
 
 class EditPost extends Component {
   constructor() {
@@ -16,12 +16,12 @@ class EditPost extends Component {
       redirectToProfile: false,
       error: "",
       fileSize: 0,
-      loading: false
+      loading: false,
     };
   }
 
-  init = postId => {
-    singlePost(postId).then(data => {
+  init = (postId) => {
+    singlePost(postId).then((data) => {
       if (data.error) {
         this.setState({ redirectToProfile: true });
       } else {
@@ -29,7 +29,7 @@ class EditPost extends Component {
           id: data.postedBy._id,
           title: data.title,
           body: data.body,
-          error: ""
+          error: "",
         });
       }
     });
@@ -46,7 +46,7 @@ class EditPost extends Component {
     if (fileSize > 1000000) {
       this.setState({
         error: "File size should be less than 100kb",
-        loading: false
+        loading: false,
       });
       return false;
     }
@@ -57,7 +57,7 @@ class EditPost extends Component {
     return true;
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
 
@@ -66,7 +66,7 @@ class EditPost extends Component {
     this.setState({ [name]: value, fileSize });
   };
 
-  clickSubmit = event => {
+  clickSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
     console.log(this.state);
@@ -74,7 +74,7 @@ class EditPost extends Component {
       const postId = this.props.match.params.postId;
       const token = isAuthenticated().token;
 
-      update(postId, token, this.postData).then(data => {
+      update(postId, token, this.postData).then((data) => {
         if (data.error) {
           this.setState({ error: data.error, loading: false });
         } else {
@@ -84,7 +84,7 @@ class EditPost extends Component {
             title: "",
             body: "",
             photo: "",
-            error: ""
+            error: "",
           });
         }
       });
@@ -114,7 +114,7 @@ class EditPost extends Component {
       <div className="md-form">
         <CKEditor
           style={{ height: "100px" }}
-          onInit={editor => {
+          onInit={(editor) => {
             console.log("Editor is ready to use!", editor);
             // Insert the toolbar before the editable area.
             editor.ui
@@ -148,29 +148,31 @@ class EditPost extends Component {
 
     return (
       <div className="container">
-        <div
-          className="alert alert-danger"
-          style={{ display: error ? "" : "none" }}
-        >
-          {error}
-        </div>
-
-        {loading ? (
-          <div className="jumbotron text-center">
-            <h2>Loading...</h2>
+        <div className="m-4">
+          <div
+            className="alert alert-danger"
+            style={{ display: error ? "" : "none" }}
+          >
+            {error}
           </div>
-        ) : (
-          ""
-        )}
 
-        <img
-          style={{ height: "200px", width: "auto" }}
-          className="img-thumbnail"
-          src={`/api/post/photo/${this.props.match.params.postId}`}
-          onError={i => (i.target.src = `${Logo}`)}
-          alt={title}
-        />
-        {isAuthenticated().user._id === id && this.editPostForm(title, body)}
+          {loading ? (
+            <div className="jumbotron text-center">
+              <h2>Loading...</h2>
+            </div>
+          ) : (
+            ""
+          )}
+
+          <img
+            style={{ height: "200px", width: "auto" }}
+            className="img-thumbnail"
+            src={`/api/post/photo/${this.props.match.params.postId}`}
+            onError={(i) => (i.target.src = `${Logo}`)}
+            alt={title}
+          />
+          {isAuthenticated().user._id === id && this.editPostForm(title, body)}
+        </div>
       </div>
     );
   }
