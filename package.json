@@ -8,7 +8,7 @@
   },
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "forver server.js",
+    "start": "forever server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
