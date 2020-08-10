@@ -51,7 +51,7 @@ class Allpost extends Component {
 
           return (
             <div className="col-md-4" key={i}>
-              <div className="card">
+              <div className="card h-100">
                 <div className="card-body">
                   <img
                     src={`/api/post/photo/${post._id}`}

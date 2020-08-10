@@ -72,6 +72,7 @@ class Profile extends Component {
     const photoUrl = user._id ? `/api/user/photo/${user._id}` : Default;
 
     return (
+      <div className='m-4'>
       <div className="container">
         <h2 className="mt-5 mb-5">Profile</h2>
         <div className="row">
@@ -150,6 +151,7 @@ class Profile extends Component {
             </div>
           )}
         </div>
+      </div>
       </div>
     );
   }

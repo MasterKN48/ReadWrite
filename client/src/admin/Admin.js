@@ -20,7 +20,7 @@ class Admin extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div>
+      <div className='m-4'>
         <div className="jumbotron">
           <h2>Admin Dashboard</h2>
           <p className="lead">Welcome to React Frontend</p>
