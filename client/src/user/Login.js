@@ -25,7 +25,6 @@ const Login = () => {
     axios
       .post("/api/signin", user)
       .then((res) => {
-        console.log("object");
         authenticate(res.data, () => {
           setValues({ redirectToReferrer: true });
         });
@@ -59,7 +58,7 @@ const Login = () => {
 
   return (
     <div className="container" style={{ marginTop: "1vh", padding: "5vw" }}>
-      <div className="container 2-75">
+      <div className="container w-75">
         <div className="card cloudy-knoxville-gradient">
           <h4 className="card-header info-color white-text text-center py-4">
             <strong>Log In</strong>
