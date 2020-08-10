@@ -28,13 +28,12 @@ class Post extends Component {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     const fileSize = name === "photo" ? event.target.files[0].size : 0;
-    this.postData.set(name, value);
+    this.postData.append(name, value);
     this.setState({ [name]: value, fileSize });
   };
   clickSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
-    console.log(this.state);
     if (this.isValid()) {
       const userId = isAuthenticated().user._id;
       const token = isAuthenticated().token;
@@ -122,7 +121,6 @@ class Post extends Component {
                 <CKEditor
                   onInit={(editor) => {
                     console.log("Editor is ready to use!", editor);
-
                     // Insert the toolbar before the editable area.
                     editor.ui
                       .getEditableElement()
@@ -133,7 +131,7 @@ class Post extends Component {
                   }}
                   onChange={(event, editor) => {
                     const data = editor.getData();
-                    this.postData.set("body", data);
+                    this.postData.append("body", data);
                     this.setState({ body: data });
                     //console.log(data);
                   }}

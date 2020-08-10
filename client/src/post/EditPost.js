@@ -44,6 +44,7 @@ class EditPost extends Component {
   isValid = () => {
     const { title, body, fileSize } = this.state;
     if (fileSize > 1000000) {
+      console.log(fileSize);
       this.setState({
         error: "File size should be less than 100kb",
         loading: false,
@@ -60,34 +61,33 @@ class EditPost extends Component {
   handleChange = (name) => (event) => {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
-
     const fileSize = name === "photo" ? event.target.files[0].size : 0;
-    this.postData.set(name, value);
+    this.postData.append(name, value);
     this.setState({ [name]: value, fileSize });
   };
 
   clickSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
-    console.log(this.state);
+    //console.log(this.postData.get("body"));
     if (this.isValid()) {
       const postId = this.props.match.params.postId;
       const token = isAuthenticated().token;
 
-      update(postId, token, this.postData).then((data) => {
-        if (data.error) {
-          this.setState({ error: data.error, loading: false });
-        } else {
+      update(postId, token, this.postData)
+        .then((data) => {
           this.setState({
             loading: false,
-            redirect: "true",
+            redirectToProfile: true,
             title: "",
             body: "",
             photo: "",
             error: "",
           });
-        }
-      });
+        })
+        .catch((err) => {
+          this.setState({ error: err.error, loading: false });
+        });
     }
   };
 
@@ -113,9 +113,8 @@ class EditPost extends Component {
       </div>
       <div className="md-form">
         <CKEditor
-          style={{ height: "100px" }}
           onInit={(editor) => {
-            console.log("Editor is ready to use!", editor);
+            //console.log("Editor is ready to use!", editor);
             // Insert the toolbar before the editable area.
             editor.ui
               .getEditableElement()
@@ -126,7 +125,8 @@ class EditPost extends Component {
           }}
           onChange={(event, editor) => {
             const data = editor.getData();
-            this.postData.set("body", data);
+            this.postData.append("body", data);
+            //console.log(data);
             this.setState({ body: data });
           }}
           editor={DecoupledEditor}
@@ -157,8 +157,11 @@ class EditPost extends Component {
           </div>
 
           {loading ? (
-            <div className="jumbotron text-center">
-              <h2>Loading...</h2>
+            <div align="center" className="ui segment">
+              <div className="ui active inverted dimmer">
+                <div className="ui text loader">Loading</div>
+              </div>
+              <p></p>
             </div>
           ) : (
             ""
