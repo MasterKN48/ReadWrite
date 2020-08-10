@@ -23,24 +23,12 @@ mongoose
   })
   .catch((err) => console.error(err));
 
-app.get("/docs", (req, res) => {
-  fs.readFile("docs/apiDocs.json", (err, data) => {
-    if (err) {
-      res.status(400).json({
-        error: err,
-      });
-    }
-    const docs = JSON.parse(data);
-    res.json(docs);
-  });
-});
-
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors("https://readwrite0.herokuapp.com/"));
 app.use(compression());
 app.use(helmet());
 // routes
