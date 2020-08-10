@@ -21,7 +21,8 @@ PORT=8000
 NODE_ENV=dev
 JWT_SECRET=<your-jwt-secret>
 CLIENT_URL=<client-url>
-PASS=<secret-for-password>
+EMAIL_ID=<email-address-for-nodemailer>
+PASS=<email-password-for-nodemailer>
 OAUTH_CLIENT=<google-oauth-client-id>
 # in client side
 # change google oauth client id
