@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const helmet = require("helmet");
+//const helmet = require("helmet");
 const compression = require("compression");
 dotenv.config();
 const path = require("path");
@@ -30,7 +30,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(cors("https://readwrite0.herokuapp.com/"));
 app.use(compression());
-app.use(helmet());
+
 // routes
 const postRoutes = require("./routes/post");
 const authRoutes = require("./routes/auth");
