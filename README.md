@@ -1,12 +1,12 @@
-<img src="client/public/logo.png" height='48px' />
+<img src="client/public/logo.png" height='64px' />
 
 ## ReadWrite.io : A Blogging website
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://readwrite0.herokuapp.com) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://readwrite0.herokuapp.com)
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://readwrite0.herokuapp.com) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/MasterKN48/blogs/master/LICENSE)  [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]()  [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/MasterKN48/ReadWrite)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://readwrite0.herokuapp.com) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/MasterKN48/blogs/master/LICENSE) [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]() [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/MasterKN48/ReadWrite)
 
-It is a MERN stack based blogging website where users can read, write, comment, profile management , follow other user, like blogs, get daily updates and user, admin dashboard. 
+It is a MERN stack based blogging website where users can read, write, comment, profile management , follow other user, like blogs, get daily updates and user, admin dashboard.
 
 ### How to run locally?
 
@@ -34,6 +34,4 @@ OAUTH_CLIENT=<google-oauth-client-id>
 npm run dev
 ```
 
-
-
-[![ForTheBadge built-with-swag](http://ForTheBadge.com/images/badges/built-with-swag.svg)](https://hithub.com/MasterKN48/)  [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)  [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)  [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+[![ForTheBadge built-with-swag](http://ForTheBadge.com/images/badges/built-with-swag.svg)](https://hithub.com/MasterKN48/) [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com) [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com) [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
