@@ -3,7 +3,7 @@ import { isAuthenticated } from "../auth"; // eslint-disable-next-line
 import { Redirect } from "react-router-dom";
 import { create } from "./apiPost";
 import CKEditor from "@ckeditor/ckeditor5-react";
-import DecoupledEditor from "ckeditor5-custom-build";
+import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
 
 class Post extends Component {
   constructor() {
