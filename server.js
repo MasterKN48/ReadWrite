@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-//const helmet = require("helmet");
+const helmet = require("helmet");
 const compression = require("compression");
 dotenv.config();
 const path = require("path");
@@ -30,6 +30,11 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(cors(`${process.env.CLIENT_URL}`));
 app.use(compression());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 // routes
 const postRoutes = require("./routes/post");

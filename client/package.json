@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "npm": "6.10.2",
-    "node": "12.6.0"
+    "node": "14.7.0"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-decoupled-document": "^21.0.0",

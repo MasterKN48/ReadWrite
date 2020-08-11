@@ -50,7 +50,7 @@ class Allpost extends Component {
           const posterName = post.postedBy ? post.postedBy.name : " Unknown";
 
           return (
-            <div className="col-md-4" key={i}>
+            <div className="col-md-4 mb-2" key={i}>
               <div className="card h-100">
                 <div className="card-body">
                   <img

@@ -1,4 +1,6 @@
-## ReadWrite.io : A Blogging website for articles , news, tech blog, how to guide, ..etc.
+<img src="client/public/logo.png" height='48px' />
+
+## ReadWrite.io : A Blogging website
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://readwrite0.herokuapp.com) 
 
